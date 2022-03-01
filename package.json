@@ -1,0 +1,29 @@
+{
+  "name": "derby",
+  "version": "1.0.0",
+  "description": "A web app to track and review game results for the board game Santorini.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conorchinitz/derby.git"
+  },
+  "keywords": [
+    "board",
+    "game",
+    "Santorini"
+  ],
+  "author": "Conor Chinitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conorchinitz/derby/issues"
+  },
+  "homepage": "https://github.com/conorchinitz/derby#readme",
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
