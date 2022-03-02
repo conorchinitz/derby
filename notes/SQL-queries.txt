@@ -1,24 +1,27 @@
+CREATE VIEW all_games AS
 SELECT 
-games.id AS game_id, 
-pow1.name AS power1,
-pow2.name AS power2,
-win_pow.name AS winning_power, 
-p1.name AS player1,
-p2.name AS player2,
-win_p.name AS winning_player
+  games.id AS game_id, 
+  pow1.name AS power1,
+  pow2.name AS power2,
+  win_pow.name AS winning_power, 
+  p1.name AS player1,
+  p2.name AS player2,
+  win_p.name AS winning_player
 
 FROM games 
 
 INNER JOIN powers pow1
-ON power1 = pow1.id
+  ON power1 = pow1.id
 INNER JOIN powers pow2
-ON power2 = pow2.id
+  ON power2 = pow2.id
 INNER JOIN powers win_pow
-ON winning_power = win_pow.id
+  ON winning_power = win_pow.id
 
 INNER JOIN players p1
-ON player1 = p1.id
+  ON player1 = p1.id
 INNER JOIN players p2
-ON player2 = p2.id
+  ON player2 = p2.id
 INNER JOIN players win_p
-ON winning_player = win_p.id;
+  ON winning_player = win_p.id;
+
+====================================================================================================
