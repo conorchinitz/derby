@@ -1,3 +1,23 @@
-h1 {
+.game {
+  border: .15em solid black;
+  border-radius: .4em;
+  margin: .5em;
+  padding: .5em;
+  max-width: fit-content;
+  min-width: 15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game * {
+  margin: .1em;
+}
+
+#box-cover-img {
+  height: 20em;
+}
+
+#welcome {
   color: blue;
 }
