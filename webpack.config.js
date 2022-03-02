@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Derby',
+      template: './src/index.html',
       meta: { 'viewport': 'width=device-width, initial-scale=1' },
     })
   ],

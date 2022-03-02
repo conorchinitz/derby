@@ -4,7 +4,7 @@
   "description": "A web app to track and review game results for the board game Santorini.",
   "private": true,
   "scripts": {
-    "3": "npm run build & node server/server.js",
+    "3": "npm run build & nodemon server/server.js",
     "8": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
