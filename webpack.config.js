@@ -7,10 +7,13 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
+    proxy: {
+    '/': 'http://localhost:3000',
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Derby - Development',
+      title: 'Derby',
       meta: { 'viewport': 'width=device-width, initial-scale=1' },
     })
   ],
