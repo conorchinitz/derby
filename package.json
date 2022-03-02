@@ -4,9 +4,9 @@
   "description": "A web app to track and review game results for the board game Santorini.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "8": "webpack serve",
     "3": "npm run build & node server/server.js",
+    "8": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "repository": {
@@ -41,6 +41,9 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "pg": "^8.7.3"
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
