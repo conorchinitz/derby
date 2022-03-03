@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BoxCover from './santorini-box-cover.webp';
-import { GamesList } from './components/GamesList.jsx';
+import { GamesList } from './components/GamesList';
 
 function App(props) {
     return (
