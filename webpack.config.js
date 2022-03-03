@@ -8,14 +8,15 @@ module.exports = {
   devServer: {
     static: './dist',
     proxy: {
-    '/': 'http://localhost:3000',
+      '/': 'http://localhost:3000',
     }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Derby',
+      title: 'Derby | A Game Database for Santorini',
       template: './src/index.html',
       meta: { 'viewport': 'width=device-width, initial-scale=1' },
+      favicon: path.join(__dirname, 'src/favicon.png'),
     })
   ],
   output: {
@@ -40,7 +41,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png|\.webp/,
+        test: /\.png|\.webp|\.ico/,
         type: 'asset/resource',
       },
     ],

@@ -1,5 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=League+Spartan:wght@300&family=Courgette&family=Lato:ital,wght@1,300&family=Lora:ital@1&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #0160a4;
+  --lighter-blue: #64d7eb;
+  --text-white: #f4f8fb;
+  --fancy-font: 'Dancing Script', cursive;
+  --headers-font: 'League Spartan', sans-serif;
+  --alt-header-font: 'Courgette', cursive;
+  --lato: 'Lora', serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--text-white);
+}
+
+header {
+  width: 100vw;
+  margin: 0 0 1em 0;
+  padding: 0 1em;
+  font-family: var(--fancy-font);
+  /* font-family: var(--alt-header-font); */
+  /* font-weight: 400; */
+  /* font-family: var(--alt-header-font); */
+  font-size: 1.5em;
+  background: linear-gradient(90deg, var(--primary-blue), var(--lighter-blue));
+}
+
+#welcome {
+  margin: .1em 0 .2em 0;
+}
+
+.fancy {
+  font-family: var(--fancy-font);
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
 .game {
-  border: .15em solid black;
+  border: .15em solid var(--primary-blue);
   border-radius: .4em;
   margin: .5em;
   padding: .5em;
@@ -14,10 +62,27 @@
   margin: .1em;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #box-cover-img {
   height: 20em;
 }
 
+#games-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#games-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 #welcome {
-  color: blue;
+  color: var(--text-white);
 }
