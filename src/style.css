@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=League+Spartan:wght@300&family=Courgette&family=Lato:ital,wght@1,300&family=Lora:ital@1&display=swap');
-
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=League+Spartan:wght@300&family=Lora:ital@1&display=swap');
 
 :root {
   --primary-blue: #0160a4;
   --lighter-blue: #64d7eb;
   --text-white: #f4f8fb;
+  --text-black: #0160a4;
+  --background-fill: hsl(205, 69%, 94%);
   --fancy-font: 'Dancing Script', cursive;
-  --headers-font: 'League Spartan', sans-serif;
-  --alt-header-font: 'Courgette', cursive;
-  --lato: 'Lora', serif;
+  --content-font: 'League Spartan', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html, body {
@@ -20,7 +20,8 @@ html, body {
 }
 
 body {
-  background-color: var(--text-white);
+  background-color: var(--background-fill);
+  font-family: var(--content-font);
 }
 
 header {
@@ -28,9 +29,6 @@ header {
   margin: 0 0 1em 0;
   padding: 0 1em;
   font-family: var(--fancy-font);
-  /* font-family: var(--alt-header-font); */
-  /* font-weight: 400; */
-  /* font-family: var(--alt-header-font); */
   font-size: 1.5em;
   background: linear-gradient(90deg, var(--primary-blue), var(--lighter-blue));
 }
@@ -46,26 +44,45 @@ header {
   margin: 0;
 }
 
+
+
 .game {
   border: .15em solid var(--primary-blue);
   border-radius: .4em;
   margin: .5em;
-  padding: .5em;
-  max-width: fit-content;
-  min-width: 15em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1em;
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 2fr);
+  background-color: var(--text-white);
 }
 
-.game * {
-  margin: .1em;
+.powers, .players {
+  margin:  0 1rem;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border-radius: 1em;
+}
+
+.winner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #app {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#box-cover-container {
+  background-color: var(--primary-blue);
+  width: 23em;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  border-radius: 1em;
 }
 
 #box-cover-img {
@@ -76,11 +93,14 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
+  margin: 1em;
+  font-size: 2em;
 }
 
 #games-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 
 #welcome {
