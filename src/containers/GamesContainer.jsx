@@ -28,7 +28,7 @@ class GamesContainer extends Component {
       <div>
         <p>Hello. Here are the most recent game results.</p>
         <p className="content-fontsize">Click a power or player name to filter the results.</p>
-        <p className="content-fontsize">Or <span className="link">click here</span> to add a new game result.</p>
+        <p className="content-fontsize">Or <span className="link" onClick={this.props.addGame}>click here</span> to add a new game result.</p>
       </div>;
     }
 
@@ -60,19 +60,19 @@ class GamesContainer extends Component {
     return this.viewAllGames();
   }
 
-  viewAllGames() {
-    return fetch('/games/all')
-      .then(data => data.json())
-      .then(data => this.setState({ games: data, filtered: false }))
-      .catch(err => console.log(err));
-  }
-
   filterGames(filter) {
     return fetch(`/games/${filter}`)
       .then(data => data.json())
       .then(data => this.setState({ games: data, filtered: true }))
       .catch(err => console.log(err));
   }
+
+  viewAllGames() {
+    return fetch('/games/all')
+      .then(data => data.json())
+      .then(data => this.setState({ games: data, filtered: false }))
+      .catch(err => console.log(err));
+  }
 }
 
-export { GamesContainer };
+export default GamesContainer;
