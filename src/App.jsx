@@ -21,6 +21,7 @@ class App extends Component {
       }
     };
     this.addGame = this.addGame.bind(this);
+    this.displayGames = this.displayGames.bind(this);
     this.updateForm = this.updateForm.bind(this);
     this.resetForm = this.resetForm.bind(this);
   }
@@ -33,7 +34,7 @@ class App extends Component {
         break;
       }
       case 'add game': {
-        content = <GameAdder formData={this.state.form} resetForm={this.resetForm}/>;
+        content = <GameAdder formData={this.state.form} resetForm={this.displayGames}/>;
         break;
       }
     }
@@ -53,7 +54,8 @@ class App extends Component {
     this.setState({ mode: 'add game' });
   }
 
-  displayGames() {
+  displayGames(e) {
+    e.preventDefault();
     this.setState( {mode: 'display games' });
   }
 
