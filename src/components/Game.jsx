@@ -7,18 +7,18 @@ function Game(props) {
         <p>Game #{props.game_id}</p>
       </div>
       <div className="powers">
-        <p>{props.power1}</p>
+        <p className="clickable">{props.power1}</p>
         <p>vs.</p>
-        <p>{props.power2}</p>
+        <p className="clickable">{props.power2}</p>
       </div>
       <div className="players">
-        <p>({props.player1}</p>
+        <p className="clickable">({props.player1}</p>
         <p>vs.</p>
-        <p>{props.player2})</p>
+        <p className="clickable">{props.player2})</p>
       </div>
       <div className="winner">
-        <p>{props.winning_power}</p>
-        <p>{props.winning_player}</p>
+        <p className="clickable">{props.winning_power}</p>
+        <p className="clickable">{props.winning_player}</p>
       </div>
     </div>
   );
