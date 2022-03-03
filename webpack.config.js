@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: './src',
     proxy: {
       '/': 'http://localhost:3000',
     }
@@ -16,7 +16,7 @@ module.exports = {
       title: 'Derby | A Game Database for Santorini',
       template: './src/index.html',
       meta: { 'viewport': 'width=device-width, initial-scale=1' },
-      favicon: path.join(__dirname, 'src/favicon.png'),
+      favicon: './favicon.ico',
     })
   ],
   output: {
@@ -49,4 +49,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   }
-}
+};
