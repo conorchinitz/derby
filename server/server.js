@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const gamesController = require('./controllers/gamesController.js');
 
 const app = express();
@@ -9,9 +8,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('dist'));
-
-app.get('/', (req, res) =>
-  res.status(200).sendFile(path.join(__dirname, '../dist/index.html')));
 
 app.get('/games/all', gamesController.getGames, (req, res) => {
   res.status(200).json(res.locals.games);
