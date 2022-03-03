@@ -4,7 +4,7 @@
   --primary-blue: #0160a4;
   --lighter-blue: #64d7eb;
   --text-white: #f4f8fb;
-  --text-black: #0160a4;
+  --text-black: #001f35;
   --background-fill: rgb(229, 242, 255);
   --fancy-font: 'Dancing Script', cursive;
   --content-font: 'League Spartan', sans-serif;
@@ -22,6 +22,7 @@ html, body {
 body {
   background-color: var(--background-fill);
   font-family: var(--content-font);
+  color: var(--text-black);
 }
 
 header {
@@ -58,6 +59,12 @@ header {
 .game * {
   display: flex;
   align-items: center;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--primary-blue)
 }
 
 .powers, .players {
