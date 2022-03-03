@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GamesListHeader from '../components/GamesListHeader';
 import Game from '../components/Game';
 
 class GamesContainer extends Component {
@@ -17,19 +18,25 @@ class GamesContainer extends Component {
     let message;
     if (this.state.filtered) {
       message =
-        <p id="filter-warning">
+        <p className="content-fontsize">
           You are viewing a filtered list of games.{' '}
           <span className="link" onClick={this.viewAllGames}>
             Click here
-          </span> to view all games again.</p>;
+          </span> to view all games.</p>;
     } else {
-      message = <p>Hello. Here are the most recent game results.</p>;
+      message =
+      <div>
+        <p>Hello. Here are the most recent game results.</p>
+        <p className="content-fontsize">Click a power or player name to filter the results.</p>
+        <p className="content-fontsize">Or <span className="link">click here</span> to add a new game result.</p>
+      </div>;
     }
 
     return(
       <div id="games-container">
         {message}
         <div id="games-list">
+          <GamesListHeader />
           {this.state.games.map((game) => {
             const { game_id, power1, power2, player1, player2, winning_power, winning_player } = game;
             return <Game
