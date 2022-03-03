@@ -23,8 +23,8 @@ const gamesController = {
 
   // Add a new game to the database.
   addGame: async function addGame(req, res, next) {
-    // console.log('Add game.');
-    const { power1, power2, player1, player2, winning_power, winning_player } = req.body;
+    console.log('Add game.');
+    const { power1, power2, player1, player2, winning_power, winning_player } = req.query;
 
     const text = queries.getIds;
     const params = [power1, power2, player1, player2, winning_power, winning_player];

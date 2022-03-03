@@ -138,6 +138,7 @@ header {
 
 #game-adder-buttons {
   display: flex;
+  justify-content: space-around;
   grid-column: 1 / 3;
 }
 

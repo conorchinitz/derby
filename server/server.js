@@ -13,12 +13,12 @@ app.get('/games/all', gamesController.getGames, (req, res) => {
   res.status(200).json(res.locals.games);
 });
 
-app.get('/games/:filter', gamesController.filterGames, (req, res) => {
-  res.status(200).json(res.locals.games);
+app.use('/post', gamesController.addGame, (req, res) => {
+  res.redirect('/');
 });
 
-app.post('/games', gamesController.addGame, (req, res) => {
-  res.status(200).json(res.locals.addedGame);
+app.get('/games/:filter', gamesController.filterGames, (req, res) => {
+  res.status(200).json(res.locals.games);
 });
 
 app.use('*', (req, res) => {
