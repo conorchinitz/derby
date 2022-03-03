@@ -31,6 +31,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
     "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.2",
     "html-webpack-plugin": "^5.5.0",
     "install": "^0.13.0",
     "nodemon": "^2.0.15",
