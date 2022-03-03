@@ -9,7 +9,9 @@ function App() {
   return (
     <div id="app">
       <Header />
-      <img id="box-cover-img" src={BoxCover} alt="The box cover of the game Santorini." />
+      <div id="box-cover-container">
+        <img id="box-cover-img" src={BoxCover} alt="The box cover of the game Santorini." />
+      </div>
       <GamesContainer />
     </div>
   );

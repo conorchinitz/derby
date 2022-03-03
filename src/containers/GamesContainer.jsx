@@ -12,7 +12,7 @@ class GamesContainer extends React.Component {
   render() {
     return(
       <div id="games-container">
-        <p>Hello, here is a list of games.</p>
+        <p>Hello. Here is a list of games.</p>
         <div id="games-list">
           {this.state.games.map((game) => {
             const { game_id, power1, power2, player1, player2, winning_power, winning_player } = game;
@@ -38,7 +38,6 @@ class GamesContainer extends React.Component {
       .then(data => data.json())
       .then(data => this.setState({ games: data }));
   }
-
 }
 
 export { GamesContainer };

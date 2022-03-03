@@ -5,7 +5,7 @@
   --lighter-blue: #64d7eb;
   --text-white: #f4f8fb;
   --text-black: #0160a4;
-  --background-fill: hsl(205, 69%, 94%);
+  --background-fill: rgb(229, 242, 255);
   --fancy-font: 'Dancing Script', cursive;
   --content-font: 'League Spartan', sans-serif;
 }
@@ -44,22 +44,25 @@ header {
   margin: 0;
 }
 
-
-
 .game {
-  border: .15em solid var(--primary-blue);
-  border-radius: .4em;
-  margin: .5em;
-  padding: 1em;
-  font-size: 1.2rem;
   display: grid;
   grid-template-columns: 1fr repeat(3, 2fr);
+  border: .15em solid var(--primary-blue);
+  border-radius: .4em;
+  margin: .5rem;
+  padding: 0 1rem;
+  font-size: 1.2rem;
   background-color: var(--text-white);
+}
+
+.game * {
+  display: flex;
+  align-items: center;
 }
 
 .powers, .players {
   margin:  0 1rem;
-  padding: 1em;
+  /* padding: 1em; */
   display: grid;
   grid-template-columns: auto auto auto;
   border-radius: 1em;
