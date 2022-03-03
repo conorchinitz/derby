@@ -6,15 +6,29 @@ class GamesContainer extends Component {
     super(props);
     this.state = {
       games: [],
+      filtered: false,
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.filterGames = this.filterGames.bind(this);
+    this.viewAllGames = this.viewAllGames.bind(this);
   }
 
   render() {
+    let message;
+    if (this.state.filtered) {
+      message =
+        <p id="filter-warning">
+          You are viewing a filtered list of games.{' '}
+          <span className="link" onClick={this.viewAllGames}>
+            Click here
+          </span> to view all games again.</p>;
+    } else {
+      message = <p>Hello. Here are the most recent game results.</p>;
+    }
+
     return(
       <div id="games-container">
-        <p>Hello. Here is a list of games.</p>
+        {message}
         <div id="games-list">
           {this.state.games.map((game) => {
             const { game_id, power1, power2, player1, player2, winning_power, winning_player } = game;
@@ -27,7 +41,7 @@ class GamesContainer extends Component {
               player2 = {player2}
               winning_power = {winning_power}
               winning_player = {winning_player}
-              handleClick = {this.handleClick}
+              handleClick = {this.filterGames}
             />;
           })}
         </div>
@@ -36,17 +50,20 @@ class GamesContainer extends Component {
   }
 
   componentDidMount() {
-    console.log('mounted');
+    return this.viewAllGames();
+  }
+
+  viewAllGames() {
     return fetch('/games/all')
       .then(data => data.json())
-      .then(data => this.setState({ games: data }))
+      .then(data => this.setState({ games: data, filtered: false }))
       .catch(err => console.log(err));
   }
 
-  handleClick(filter) {
+  filterGames(filter) {
     return fetch(`/games/${filter}`)
       .then(data => data.json())
-      .then(data => this.setState({ games: data }))
+      .then(data => this.setState({ games: data, filtered: true }))
       .catch(err => console.log(err));
   }
 }

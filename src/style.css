@@ -61,7 +61,7 @@ header {
   align-items: center;
 }
 
-.clickable:hover {
+.clickable:hover, .link {
   text-decoration: underline;
   cursor: pointer;
   color: var(--primary-blue)
@@ -99,6 +99,10 @@ header {
   height: 20em;
 }
 
+#filter-warning {
+  font-size: .7em;
+}
+
 #games-container {
   display: flex;
   flex-direction: column;
@@ -111,6 +115,7 @@ header {
 #games-list {
   display: flex;
   flex-direction: column;
+  width: 80vw;
 }
 
 #welcome {
