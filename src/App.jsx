@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode: 'add game',
+      mode: 'display games',
       form: {
         power1: '',
         power2: '',
