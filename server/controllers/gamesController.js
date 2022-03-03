@@ -1,7 +1,8 @@
 const db = require('../postgres-pool.js');
-const queries = require('../queries/POST_addGameQuery.js');
+const queries = require('../queries/queries.js');
 
 const gamesController = {
+  // Display all games in the database.
   getGames: async function getGames(req, res, next) {
     // console.log('Get games.');
 
@@ -19,6 +20,8 @@ const gamesController = {
     }
 
   },
+
+  // Add a new game to the database.
   addGame: async function addGame(req, res, next) {
     console.log('Add game.');
     const { power1, power2, player1, player2, winning_power, winning_player } = req.body;
@@ -42,7 +45,23 @@ const gamesController = {
 
       return next();
     } catch (err) {
-      // console.log('gamesController.addGame: ERROR');
+      console.log('gamesController.addGame: ERROR');
+      console.log(err);
+      return next(err);
+    }
+  },
+
+  // Return a filtered list of games based on a specified player or power.
+  filterGames: async function filterGames(req, res, next) {
+    const text = queries.filterGames;
+    const params = [req.params.filter];
+
+    try {
+      const data = await db.query(text, params);
+      res.locals.games = data.rows;
+      return next();
+    } catch (err) {
+      console.log('gamesController.filterGames: ERROR');
       console.log(err);
       return next(err);
     }
