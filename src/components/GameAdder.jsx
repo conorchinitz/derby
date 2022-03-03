@@ -22,7 +22,7 @@ class GameAdder extends Component {
           <label htmlFor="winning_player">Winning Player</label>
           <input id="winning_player" name="winning_player" type="text" />
           <div id="game-adder-buttons">
-            <button id="start-over" onClick={this.props.resetForm}>Start Over</button>
+            <button id="start-over" onClick={this.props.resetForm}>Never Mind</button>
             <button type="submit">Submit !</button>
           </div>
         </form>
