@@ -186,6 +186,7 @@ header {
 }
 
 #games-list-header {
+  order: 2;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2.75fr .2fr;
   border-radius: .4em;
@@ -200,7 +201,7 @@ header {
 
 #games-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width: 90vw;
 }
 
