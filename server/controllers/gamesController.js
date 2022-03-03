@@ -2,7 +2,7 @@ const db = require('../postgres-pool.js');
 const queries = require('../queries/queries.js');
 
 const gamesController = {
-  // Display all games in the database.
+  // Send the first 100 games in the database.
   getGames: async function getGames(req, res, next) {
     // console.log('Get games.');
 
@@ -11,7 +11,7 @@ const gamesController = {
     try {
       // console.log('try');
       const games = await db.query(text);
-      res.locals.games = games.rows;
+      res.locals.games = games.rows.slice(0,100);
       return next();
     } catch (err) {
       console.log('gamesController.getGames: ERROR');

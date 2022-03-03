@@ -5,6 +5,7 @@
   --lighter-blue: #64d7eb;
   --text-white: #f4f8fb;
   --text-black: #001f35;
+  --secondary-info: rgb(72, 83, 91, 0.5);
   --background-fill: rgb(229, 242, 255);
   --fancy-font: 'Dancing Script', cursive;
   --content-font: 'League Spartan', sans-serif;
@@ -48,11 +49,11 @@ header {
 .game {
   display: grid;
   grid-template-columns: 1fr repeat(3, 2fr);
-  border: .15em solid var(--primary-blue);
+  border: .15rem solid var(--primary-blue);
   border-radius: .4em;
   margin: .5rem;
   padding: 0 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: var(--text-white);
 }
 
@@ -73,6 +74,10 @@ header {
   display: grid;
   grid-template-columns: auto auto auto;
   border-radius: 1em;
+}
+
+.secondary {
+  color: var(--secondary-info);
 }
 
 .winner {
@@ -115,7 +120,7 @@ header {
 #games-list {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 90vw;
 }
 
 #welcome {
