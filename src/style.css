@@ -9,6 +9,7 @@
   --background-fill: rgb(229, 242, 255);
   --fancy-font: 'Dancing Script', cursive;
   --content-font: 'League Spartan', sans-serif;
+  --content-fontsize: 1.4rem;
 }
 
 * {
@@ -21,6 +22,7 @@ html, body {
 }
 
 body {
+  width: 100vw;
   background-color: var(--background-fill);
   font-family: var(--content-font);
   color: var(--text-black);
@@ -70,14 +72,17 @@ header {
 
 .powers, .players {
   margin:  0 1rem;
-  /* padding: 1em; */
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 2fr 1fr 2fr;
   border-radius: 1em;
 }
 
 .secondary {
   color: var(--secondary-info);
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .winner {
@@ -104,8 +109,8 @@ header {
   height: 20em;
 }
 
-#filter-warning {
-  font-size: .7em;
+.content-fontsize {
+  font-size: var(--content-fontsize);
 }
 
 #games-container {
@@ -115,6 +120,20 @@ header {
   width: 100vw;
   margin: 1em;
   font-size: 2em;
+  text-align: center;
+}
+
+#games-list-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2.75fr .2fr;
+  border-radius: .4em;
+  margin: .5rem;
+  padding: .75rem;
+  font-size: 3rem;
+  color: var(--text-white);
+  background-color: var(--primary-blue);
+  text-align:center;
+  box-shadow: 0 .2rem .3rem var(--text-black);
 }
 
 #games-list {
