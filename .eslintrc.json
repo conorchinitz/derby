@@ -32,10 +32,11 @@
             "warn",
             "always"
         ], 
-        "no-unused-vars": ["warn"],
+        "no-unused-vars": "warn",
         "prefer-const": "warn",
         "space-infix-ops": "warn", 
         "no-trailing-spaces": "warn",
         "react/prop-types": "off"
-    }
+    },
+    "ignorePatterns": "/dist/*"
 }
