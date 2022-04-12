@@ -4,8 +4,8 @@
   "description": "A web app to track and review game results for the board game Santorini.",
   "private": true,
   "scripts": {
-    "3": "NODE_ENV=production nodemon server/server.js",
-    "8": "NODE_ENV=development webpack serve",
+    "start": "NODE_ENV=production nodemon server/server.js",
+    "dev": "NODE_ENV=development webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack"
   },
