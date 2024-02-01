@@ -33,7 +33,7 @@
     "eslint": "^8.10.0",
     "eslint-plugin-react": "^7.29.2",
     "html-webpack-plugin": "^5.5.0",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.22",
     "npm": "^8.11.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.76.0",
